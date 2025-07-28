@@ -22,17 +22,11 @@ export default function Home() {
       </div>
     </section>
 
-    {resumes && resumes.length > 0 (
-    <div className="resumes-section">
-
-      {resumes.map((resume) => (
-      <ResumeCard key={resume.id} resume={resume} />
-      ))}
-    </div>
-
-)}
-
-
+    {resumes.map( (resume) => (
+      <div>
+        <h1>{resume.jobTitle}</h1>
+      </div>
+    ))}
 
   </main>
 }
