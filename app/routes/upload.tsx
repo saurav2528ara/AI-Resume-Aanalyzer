@@ -44,7 +44,7 @@ const navigate = useNavigate();
         companyName, jobTitle, jobDescription,
         feedback: '',
     }
-    await kv.set(`resume:${uuid}`, JSON.stringify(data));
+    await kv.set(`resume:${uuid}`, JSON.stringify(data)); 
 
     setStatusText('Analyzing...')
 
@@ -59,14 +59,14 @@ const navigate = useNavigate();
         : feedback.message.content[0].text;
     
     data.feedback = JSON.parse(feedbackText);
-    await kv.set(`resume.${uuid}`, JSON.stringify(data));
+    await kv.set(`resume:${uuid}`, JSON.stringify(data)); 
     setStatusText('Analysis complete, redirecting...');
     console.log(data);
-    
+    navigate(`/resume/${uuid}`);
  }  
 
 
- const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+ const handleSubmit = (e: FormEvent<HTMLFormElement>)=> {
     e.preventDefault();
     const form:HTMLFormElement | null = e.currentTarget.closest('form')
     if(!form) return;
@@ -114,9 +114,12 @@ const navigate = useNavigate();
                         <FileUploader onFileSelect={handleFileSelect}/>
                     </div>
 
-                    <button className='primary-button' type='submit'>
-                        Analyze Resume
-                    </button>
+        <button 
+className='primary-button' 
+type='submit'
+>
+Analyze Resume
+</button>
                    
                 </form>
             )}
