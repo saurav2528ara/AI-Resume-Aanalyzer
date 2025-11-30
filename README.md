@@ -3,6 +3,11 @@
 
 <img width="1773" height="912" alt="Image" src="https://github.com/user-attachments/assets/cdc2f24d-be7a-425e-8500-66c52092b863" />
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/31624fbf-b6ed-4705-b93e-50a9fb82d596" alt="Preview" />
+</p>
+
+
 # Welcome to React Router!
 
 A modern, production-ready template for building full-stack React applications using React Router.
